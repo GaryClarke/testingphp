@@ -1,10 +1,10 @@
-<?php # /src/Cart.php
+<?php // src/Cart.php
 
 namespace App;
 
 class Cart
 {
-    public float $price;
+    private float $price;
     private static float $tax = 1.2;
 
     public function getNetPrice(): float
@@ -15,5 +15,10 @@ class Cart
     public static function setTax($tax): void
     {
         self::$tax = $tax;
+    }
+
+    public function setPrice(float $price): void
+    {
+        $this->price = $price;
     }
 }
