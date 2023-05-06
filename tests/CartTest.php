@@ -11,7 +11,13 @@ class CartTest extends TestCase
 
     protected function setUp(): void
     {
+        Cart::setTax(1.2);
         $this->cart = new Cart();
+    }
+
+    protected function tearDown(): void
+    {
+        // Cart::setTax(1.2);
     }
 
     public function testNetPriceIsCalculatedCorrectly(): void
