@@ -11,7 +11,6 @@ class CartTest extends TestCase
 
     protected function setUp(): void
     {
-        Cart::setTax(1.2);
         $this->cart = new Cart();
     }
 
