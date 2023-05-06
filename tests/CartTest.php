@@ -7,16 +7,36 @@ use PHPUnit\Framework\TestCase;
 
 class CartTest extends TestCase
 {
+    protected Cart $cart;
+
+    protected function setUp(): void
+    {
+        Cart::setTax(1.2);
+        $this->cart = new Cart();
+    }
+
     public function testNetPriceIsCalculatedCorrectly(): void
     {
         // Setup
-        $cart = new Cart();
-        $cart->price = 10;
+        $this->cart->price = 10;
 
         // Do something
-        $netPrice = $cart->getNetPrice();
+        $netPrice = $this->cart->getNetPrice();
 
         // Make assertions
         $this->assertEquals(12, $netPrice);
+    }
+
+    public function testTheCartTaxValueCanBeChangedStatically(): void
+    {
+        // Setup
+        $this->cart->price = 10;
+
+        // Do something
+        Cart::setTax(1.5);
+        $netPrice = $this->cart->getNetPrice();
+
+        // Make assertions
+        $this->assertEquals(15, $netPrice);
     }
 }
