@@ -60,6 +60,6 @@ class ExampleTest extends \PHPUnit\Framework\TestCase
         $this->assertGreaterThanOrEqual(21, $value);
 
         // assertIsArray
-        $this->assertTrue(is_array([3, 2, 1]));
+        $this->assertTrue(is_array(321), 'Failed asserting that 321 is an array');
     }
 }
