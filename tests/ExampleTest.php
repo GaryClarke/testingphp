@@ -1,4 +1,6 @@
-<?php // /tests/Example.test
+<?php # /tests/ExampleTest.php
+
+namespace App\Tests;
 
 class ExampleTest extends \PHPUnit\Framework\TestCase
 {
@@ -7,10 +9,10 @@ class ExampleTest extends \PHPUnit\Framework\TestCase
         $string1 = 'garyclarketech';
         $string2 = 'garyclarketek';
 
-        $this->assertFalse($string1 === $string2);
+        $this->assertFalse($string1 == $string2);
     }
 
-    public function testProductFunction(): void
+    public function testProductIsCalculatedCorrectly(): void
     {
         require 'example-functions.php';
 

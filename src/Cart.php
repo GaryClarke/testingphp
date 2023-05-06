@@ -1,4 +1,6 @@
-<?php # src/Cart.php
+<?php # /src/Cart.php
+
+namespace App;
 
 class Cart
 {
