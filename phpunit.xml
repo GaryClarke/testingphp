@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit colors="true" bootstrap="tests/bootstrap.php" stopOnError="true">
+
+    <php>
+        <env name="APP_ENV" value="test" force="true" />
+        <env name="DB_HOST" value="localhost" force="true" />
+    </php>
+
+    <testsuites>
+        <testsuite name="Tests">
+            <directory>tests</directory>
+        </testsuite>
+        <testsuite name="Integration">
+            <directory>tests/integration</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
