@@ -1,4 +1,4 @@
-<?php # /tests/CartTest.php
+<?php declare(strict_types=1); # /tests/CartTest.php
 
 namespace App\Tests;
 
@@ -38,5 +38,17 @@ class CartTest extends TestCase
 
         // Make assertions
         $this->assertEquals(12, $netPrice);
+    }
+
+    public function testErrorHappensWhenPriceIsSetAsString(): void
+    {
+        try {
+
+            $this->cart->setPrice('5.99');
+
+            $this->fail('Price can not be a float');
+        } catch (\Throwable $throwable) {
+            $this->assertStringContainsString('must be of type float', $throwable->getMessage());
+        }
     }
 }
