@@ -46,7 +46,7 @@ class CartTest extends TestCase
 
             $this->cart->setPrice('5.99');
 
-            $this->fail('Price can not be a float');
+            $this->fail('Price must be a float');
         } catch (\Throwable $throwable) {
             $this->assertStringContainsString('must be of type float', $throwable->getMessage());
         }
